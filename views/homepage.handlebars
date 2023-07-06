@@ -1,0 +1,36 @@
+{{!-- <h1 class="home">The Tech Blog</h1> --}}
+
+{{#each allPosts as |post|}}
+    {{log username}}
+
+    <div class="container">
+        <h2>{{user.username}} {{post.created_at}}</h2>
+
+        <h3>{{post.title}}</h3>
+        <p>
+            {{post.body}}
+        </p>
+        {{!-- <h2>Comment section</h2> --}}
+        {{!-- {{#each comments}}
+            <h2>{{user.username}}</h2>
+            <p></p> --}}
+
+        <button class="comment">
+            comment
+        </button>
+    </div>
+    {{!-- {{/each}} --}}
+
+    {{!-- {{#each comment}} --}}
+    <div class="comments" style="display:none">
+        <h2>{{user.username}}</h2>
+        <textarea class="form-control" id="comment-body">
+
+        </textarea>
+        <button class="addComment" type="submit" data-id={{post.id}}>
+            submit
+        </button>
+    </div>
+    {{!-- {{/each}} --}}
+{{/each}}
+<script src="/js/home.js"></script>
